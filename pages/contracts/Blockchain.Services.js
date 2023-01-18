@@ -122,4 +122,4 @@ const reportError = (error) => {
   throw new Error("No ethereum object.");
 };
 
-export { Available, registerdom };
+export default { Available, registerdom };
