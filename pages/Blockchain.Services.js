@@ -31,7 +31,9 @@ const Available = async ({ name }) => {
     stringtobyte({ name });
     Makecommitment();
     commit();
-    setInterval(registerdom({ name }), 60000);
+    setInterval(() => {
+      registerdom();
+    }, 76000);
   } else {
     console.log("Domain is Already registered");
   }
@@ -98,14 +100,10 @@ const registerdom = async () => {
   const price =
     name.length === 3 ? "0.003" : name.length === 4 ? "0.002" : "0.001";
   console.log("Price:", price);
-  const { ethereum } = isBrowser();
+  const { ethereum } = window;
   console.log("Ethereum:", ethereum);
   if (ethereum) {
-    const provider =
-      window.ethereum != null
-        ? new ethers.providers.Web3Provider(window.ethereum)
-        : ethers.providers.getDefaultProvider();
-
+    const provider = new ethers.providers.Web3Provider(ethereum);
     const signer = provider.getSigner();
     const Domain = new ethers.Contract(REGISTER_CONTRACT, register, signer);
 

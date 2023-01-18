@@ -44,7 +44,9 @@ function BuyDomain() {
           </button>
         </div>
         <p>After registration of the domain please wait for 1 minute to confirm it. </p>
+        <p className="text-md py-5 text-white">Once the domain is registered it will be Available at <a className="text-blue-400 text-xl underline" href="https://testnets.opensea.io/account" target="_blank">OpenSea</a></p>
       </div>
+      
     </div>
   );
 }
