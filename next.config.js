@@ -41,3 +41,7 @@ module.exports = {
     ignoreDuringBuilds: true,
   },
 };
+
+module.exports = {
+  pageExtensions: ['mdx', 'md', 'jsx', 'tsx', 'ts'],
+}
