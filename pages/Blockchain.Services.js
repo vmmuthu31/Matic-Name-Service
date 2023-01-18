@@ -16,7 +16,10 @@ const RESOLVER_CONTRACT = "0xF22136ECFedAF15716A3e67A30f86EF53740d84C";
 const RAWDATA_CONTRACT = "0xe66983CcB6F6D1480fFf4C20b7ffbE7dfE1Ae1E8";
 
 const Available = async ({ name }) => {
-  const provider = new ethers.providers.Web3Provider(isBrowser().ethereum);
+  const provider =
+    window.ethereum != null
+      ? new ethers.providers.Web3Provider(window.ethereum)
+      : ethers.providers.getDefaultProvider();
   const signer = provider.getSigner();
   // console.log(provider);
   const Domain = new ethers.Contract(REGISTER_CONTRACT, register, signer);
@@ -36,7 +39,11 @@ const Available = async ({ name }) => {
 };
 
 const stringtobyte = async ({ name }) => {
-  const provider = new ethers.providers.Web3Provider(isBrowser().ethereum);
+  const provider =
+    window.ethereum != null
+      ? new ethers.providers.Web3Provider(window.ethereum)
+      : ethers.providers.getDefaultProvider();
+
   const signer = provider.getSigner();
   const Domain = new ethers.Contract(RAWDATA_CONTRACT, rawdata, signer);
   const tokenId = await Domain.stringToBytes32(name);
@@ -48,7 +55,11 @@ const stringtobyte = async ({ name }) => {
 const Makecommitment = async () => {
   const name = localStorage.getItem("name");
   const secret = await stringtobyte({ name });
-  const provider = new ethers.providers.Web3Provider(isBrowser().ethereum);
+  const provider =
+    window.ethereum != null
+      ? new ethers.providers.Web3Provider(window.ethereum)
+      : ethers.providers.getDefaultProvider();
+
   const signer = provider.getSigner();
   const Domain = new ethers.Contract(RAWDATA_CONTRACT, rawdata, signer);
   const tokenId = await Domain.makeCommitmentWithConfig(
@@ -63,7 +74,11 @@ const Makecommitment = async () => {
 
 const commit = async () => {
   const commitment = await Makecommitment();
-  const provider = new ethers.providers.Web3Provider(isBrowser().ethereum);
+  const provider =
+    window.ethereum != null
+      ? new ethers.providers.Web3Provider(window.ethereum)
+      : ethers.providers.getDefaultProvider();
+
   const signer = provider.getSigner();
   console.log("commit check", commitment);
   const Domain = new ethers.Contract(REGISTER_CONTRACT, register, signer);
@@ -86,7 +101,11 @@ const registerdom = async () => {
   const { ethereum } = isBrowser();
   console.log("Ethereum:", ethereum);
   if (ethereum) {
-    const provider = new ethers.providers.Web3Provider(ethereum);
+    const provider =
+      window.ethereum != null
+        ? new ethers.providers.Web3Provider(window.ethereum)
+        : ethers.providers.getDefaultProvider();
+
     const signer = provider.getSigner();
     const Domain = new ethers.Contract(REGISTER_CONTRACT, register, signer);
 

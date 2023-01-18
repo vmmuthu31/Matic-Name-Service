@@ -9,9 +9,7 @@ import dynamic from "next/dynamic";
 
 function BuyDomain() {
   const [name, setName] = useState("");
-  const handleSubmission = async (e) => {
-    e.preventDefault();
-
+  const handleSubmission = async () => {
     const tokenID = await Available({name});
     console.log(tokenID)
   }
