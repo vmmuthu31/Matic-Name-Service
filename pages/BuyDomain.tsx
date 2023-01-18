@@ -4,12 +4,13 @@ import Link from "next/link";
 import Header from "./components/Header";
 import Image from "next/image";
 import {useState} from "react"
-import { Available } from "./Blockchain.Services";
+import { Available } from "./contracts/Blockchain.Services";
 import dynamic from "next/dynamic";
 
 function BuyDomain() {
   const [name, setName] = useState("");
   const handleSubmission = async () => {
+    
     const tokenID = await Available({name});
     console.log(tokenID)
   }
