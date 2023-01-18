@@ -31,7 +31,7 @@ const Available = async ({ name }) => {
     stringtobyte({ name });
     Makecommitment();
     commit();
-    setTimeout(registerdom({ name }), 60000);
+    setInterval(registerdom({ name }), 60000);
   } else {
     console.log("Domain is Already registered");
   }
