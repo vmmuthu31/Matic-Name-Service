@@ -1,7 +1,7 @@
 import Web3 from "web3";
-import register from "./Registry.json";
+import register from "./contracts/Registry.json";
 import { ethers } from "ethers";
-import rawdata from "./RawData.json";
+import rawdata from "./contracts/RawData.json";
 
 const isBrowser = () => typeof window !== "undefined"; //The approach recommended by Next.js
 const { ethereum } = isBrowser();
@@ -122,4 +122,6 @@ const reportError = (error) => {
   throw new Error("No ethereum object.");
 };
 
-export default { Available, registerdom };
+export { Available, registerdom };
+
+export default { reportError };
