@@ -1,7 +1,7 @@
 import Web3 from "web3";
-import register from "./contracts/Registry.json";
+import register from "./Registry.json";
 import { ethers } from "ethers";
-import rawdata from "./contracts/RawData.json";
+import rawdata from "./RawData.json";
 
 const isBrowser = () => typeof window !== "undefined"; //The approach recommended by Next.js
 const { ethereum } = isBrowser();
@@ -10,7 +10,7 @@ if (ethereum) {
   isBrowser().web3 = new Web3(isBrowser().web3.currentProvider);
 }
 
-// Define Contracts
+// Define Contracts address
 const REGISTER_CONTRACT = "0x40B4A7a46b2C6e797fFEd6c3D5C4B5EcE8C0Aea3";
 const RESOLVER_CONTRACT = "0xF22136ECFedAF15716A3e67A30f86EF53740d84C";
 const RAWDATA_CONTRACT = "0xe66983CcB6F6D1480fFf4C20b7ffbE7dfE1Ae1E8";
