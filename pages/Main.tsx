@@ -38,7 +38,7 @@ function Main() {
             One name for all your addresses
           </p>
           <p className="text-3xl font-thin mb-10 text-center">
-            No more copying and pasting long addresses. Use your ENS <br />
+            No more copying and pasting long addresses. Use your Matic<br />
             name to store all of your addresses and receive any <br />
             cryptocurrency, token, or NFT.
           </p>
@@ -50,8 +50,8 @@ function Main() {
           </p>
           <p className="text-3xl font-thin mb-10 lg:text-center">
             Launch censorship-resistant decentralised websites with <br />
-            ENS. Upload your website to IPFS and access it with your <br />
-            ENS name.
+            Matic. Upload your website to IPFS and access it with your <br />
+            Matic name.
           </p>
 
           <div className="flex gap-4 lg:py-6">

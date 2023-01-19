@@ -24,11 +24,11 @@ function BuyDomain() {
         {/* MNS Main Page Header */}
         <div className="flex  w-full justify-between items-center text-white mb-[5px]">        
         </div>
-        {/* ENS Logo */}
+        {/* PNS Logo */}
         <div className="w-[223px] mb-[65px]">
           <Image src={logoLg} alt="" />
         </div>
-        {/* ENS Search-Bar */}
+        {/* PNS Search-Bar */}
         <div className="w-[250px] lg:w-[700px] h-[50px] lg:h-[90px] flex justify-between drop-shadow-lg bg-white rounded-lg">
           <div className="w-[80%] lg:w-[70%] flex items-center lg:px-4">
             <BsSearch className="text-lg lg:text-3xl mr-2 ml-2 lg:mr-3" />
