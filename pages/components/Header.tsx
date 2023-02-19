@@ -3,7 +3,6 @@ import Link from "next/link";
 import logo from "../../Assets/pns-logo.png";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
-
 const Header = () => {
   return (
     <div className="flex flex-col sm:flex-row sm:item-center justify-between py-4 px-4 align-middle items-center">
